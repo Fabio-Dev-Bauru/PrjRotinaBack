@@ -15,6 +15,7 @@ namespace PrjRotina.Models
             Concluido = false;
             DataCadastro = DateTime.Now;
             DataConclusao = null;
+            Quantidade = 0;
         }
 
         public string Id { get; private set; }
@@ -28,6 +29,8 @@ namespace PrjRotina.Models
         public DateTime DataCadastro { get; private set; }
 
         public DateTime? DataConclusao { get; private set; }
+
+        public int Quantidade { get; set; }
 
 
         public void AtualizarTarefa(string nome, string detalhes, bool? concluido = false)

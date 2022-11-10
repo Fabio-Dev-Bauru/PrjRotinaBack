@@ -9,7 +9,7 @@ namespace PrjRotina.DAO.Interfaces
 
         void Atualizar(Rotina rotinaAtualizada);
 
-        IEnumerable<Rotina> ListaRotina(string nome);
+        public IEnumerable<Rotina> ListaRotina(int pagina, string nome);
 
         Rotina Buscar(string id);
 

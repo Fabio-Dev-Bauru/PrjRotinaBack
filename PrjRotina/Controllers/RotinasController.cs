@@ -24,10 +24,10 @@ namespace PrjRotina.Controllers
 
 
         // GET: api/rotinas
-        [HttpGet("lista/{nome?}")]
-        public ActionResult ListaRotina(string nome)
+        [HttpGet("lista/{pagina}/{nome?}")]
+        public ActionResult<Rotina> ListaRotina(int pagina, string nome)
         {
-            var rotinas = _rotinas.ListaRotina(nome);   
+            var rotinas = _rotinas.ListaRotina(pagina, nome);
             return Ok(rotinas);
         }
 

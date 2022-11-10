@@ -50,5 +50,30 @@ namespace PrjRotina.DAO
         {
             _rotinas.DeleteOne(rotina => rotina.Id == id);
         }
+
+        public IEnumerable<Rotina> ListaRotina(int pagina, string nome)
+        {
+            List<Rotina> obj = new();
+            const int linhas = 3;
+
+            if (pagina == 1)
+            {
+                obj = _rotinas.Find(rotina => rotina.Nome.Contains(nome ?? string.Empty)).Limit(3).ToList();
+            }
+
+            else
+            {
+                obj = _rotinas.Find(rotina => rotina.Nome.Contains(nome ?? string.Empty)).Skip((pagina * linhas) - linhas).ToList();
+            }
+
+            
+
+
+                                
+
+
+            return obj;
+
+        }
     }
 }
